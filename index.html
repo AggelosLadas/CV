@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Aggelos Ladas - CV</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="fav.png">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="fav.png" />
+    <style>
+        body {
+            opacity: 0;
+            transition: opacity 0.8s ease-in;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
     <div class="cv-container">
         <header>
             <h1>Aggelos Ladas</h1>
-            <p class="subtitle">Computer and Software Enthusiast &bull; Strong Systems and Application Development Background</p>
+            <p class="subtitle">Computer and Software Enthusiast • Strong Systems and Application Development Background</p>
         </header>
 
         <section class="section">
@@ -106,5 +115,26 @@
             <p>© 2025 Aggelos Ladas</p>
         </footer>
     </div>
+
+    <script>
+        // Fade-in on load
+        window.addEventListener("load", function () {
+            document.body.classList.add("loaded");
+        });
+
+        // Scroll animation
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
