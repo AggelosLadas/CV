@@ -19,7 +19,8 @@ body {
    Main Container
    ========================================= */
 .cv-container {
-  max-width: 850px; 
+  width: 90%; /* This tells it to take up 90% of your screen width */
+  max-width: 1200px; /* This stops it from stretching too far on ultra-wide monitors */
   margin: 50px auto;
   padding: 50px 40px;
   background-color: #ffffff;
@@ -29,12 +30,11 @@ body {
 }
 
 /* =========================================
-   Header & Titles (UPDATED)
+   Header & Titles
    ========================================= */
 header {
   text-align: center;
-  margin-bottom: 35px; /* Cleaned up spacing */
-  /* Removed the old full-width border and padding */
+  margin-bottom: 35px;
 }
 
 header h1 {
@@ -48,11 +48,10 @@ header h1 {
 .subtitle {
   font-size: 18px;
   color: #666;
-  margin: 8px 0 20px 0; /* Forces exact spacing before the line, removes default weird gap */
+  margin: 8px 0 20px 0;
   font-weight: 400;
 }
 
-/* New, modern centered separator line */
 header::after {
   content: '';
   display: block;
@@ -132,7 +131,40 @@ ul.skills li:hover {
   border-radius: 4px;
 }
 
-.project-entry h3 { margin: 0 0 5px 0; font-size: 19px; color: #222; }
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  gap: 15px;
+}
+
+.project-header h3 { 
+  margin: 0; 
+  font-size: 19px; 
+  color: #222; 
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #004080;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 5px 12px;
+  border: 1px solid #004080;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.github-link:hover {
+  background-color: #004080;
+  color: #ffffff;
+}
+
 .project-subtitle {
   font-size: 13px;
   color: #004080;
@@ -142,7 +174,16 @@ ul.skills li:hover {
   letter-spacing: 0.5px;
 }
 
-.project-tech li { font-size: 12px !important; padding: 4px 10px !important; background: #fff !important; }
+ul.project-tech li { 
+  font-size: 12px; 
+  padding: 4px 10px; 
+  background-color: #ffffff; 
+}
+
+ul.project-tech li:hover {
+  background-color: #004080;
+  color: #ffffff;
+}
 
 /* =========================================
    Education Section
@@ -181,4 +222,11 @@ footer {
   header h1 { font-size: 30px; }
   .education-entry { flex-direction: column-reverse; align-items: flex-start; }
   .uni-logo { width: 60px; margin-bottom: 15px; }
+  
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
 }
