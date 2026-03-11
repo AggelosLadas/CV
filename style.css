@@ -186,6 +186,51 @@ ul.project-tech li:hover {
 }
 
 /* =========================================
+   Certification Toggle
+   ========================================= */
+.cert-toggle-btn {
+  background: none;
+  border: none;
+  color: #004080;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease-in-out;
+  font-family: inherit;
+}
+
+.cert-toggle-btn:hover {
+  color: #00264d;
+  text-decoration: underline;
+}
+
+.cert-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.3s ease;
+}
+
+.cert-container.show {
+  max-height: 800px; /* Adjust if your image is extremely tall */
+  opacity: 1;
+  margin-top: 15px;
+}
+
+.cert-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #dceeff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================================
    Education Section
    ========================================= */
 .education-entry {
